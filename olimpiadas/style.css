@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* styles.css */
+
+/* Estilos para el cuerpo del formulario */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para el contenedor del formulario */
+.container {
+    display: flex; /* Usa el modelo de caja flexible */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    min-height: 100vh; /* Establece la altura mínima del contenedor al 100% de la ventana */
+}
+
+/* Estilos para el contenedor del formulario */
+.form-container {
+    background-color: rgba(0, 0, 0, 0.2); /* Color de fondo semi-transparente */
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+}
+
+/* Estilos para el contenido del formulario */
+.form-content {
+    text-align: center; /* Centra el texto en el contenido del formulario */
+    max-width: 300px; /* Ancho máximo del contenido del formulario */
+    margin: 0 auto; /* Centra el contenido del formulario horizontalmente */
+}
+
+
+/* Estilos para el encabezado */
+h1 {
+    color: #000000;
+}
+
+/* Estilos para etiquetas y campos de entrada */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para el botón */
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los enlaces */
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
