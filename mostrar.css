@@ -1,0 +1,15 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #a1b5f0; /* Cambiar color de fondo a celeste claro */
+  }
+
+  th, td {
+    border: 1px solid #0e2047;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color:#a1b5f0; 
+  }
