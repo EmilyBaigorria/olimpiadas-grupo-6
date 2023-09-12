@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 12-09-2023 a las 23:19:02
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.9
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 12-09-2023 a las 23:17:59
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,59 +24,76 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ficha_paciente`
+-- Estructura de tabla para la tabla `llamadas`
 --
 
-CREATE TABLE `ficha_paciente` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `apellido` varchar(50) NOT NULL,
-  `sexo` enum('Femenino','Masculino','Prefiero no decirlo') NOT NULL,
-  `telefono` varchar(15) NOT NULL,
-  `localidad` varchar(100) NOT NULL,
-  `direccion` varchar(100) NOT NULL,
-  `fecha_nacimiento` date NOT NULL,
-  `medico_asignado` varchar(50) NOT NULL,
-  `enfermedades` text NOT NULL,
-  `medicamentos` text NOT NULL,
-  `obra_social` enum('si','no') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `llamadas` (
+  `id_llamada` int(11) NOT NULL,
+  `fecha_respuesta` datetime(6) NOT NULL,
+  `fecha_llegada` datetime(6) NOT NULL,
+  `tiempo_espera` int(11) NOT NULL,
+  `tipo_llamada` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `ficha_paciente`
+-- Volcado de datos para la tabla `llamadas`
 --
 
-INSERT INTO `ficha_paciente` (`id`, `nombre`, `apellido`, `sexo`, `telefono`, `localidad`, `direccion`, `fecha_nacimiento`, `medico_asignado`, `enfermedades`, `medicamentos`, `obra_social`) VALUES
-(1, 'marina', 'vaca', 'Femenino', '3513872015', '', 'mariano moreno', '2023-09-04', '', 'diabetes', 'tafirol', 'si'),
-(2, 'marina', 'vaca', 'Femenino', '3513872015', '', 'mariano moreno', '2023-09-04', '', 'diabetes', 'tafirol', 'si'),
-(3, 'marina', 'vaca', 'Femenino', '3513872015', '', 'mariano moreno', '2023-09-04', '', 'diabetes', 'tafirol', 'si'),
-(4, 'erika', 'lucero', 'Femenino', '315342', 'monte cristo', 'shhsdhs', '2004-11-27', 'guada', 'nose', 'tafirol', 'si'),
-(5, 'erika', 'lucero', 'Femenino', '315342', 'monte cristo', 'shhsdhs', '2004-11-27', 'guada', 'nose', 'tafirol', 'si'),
-(6, 'erika', 'lucero', 'Femenino', '315342', 'monte cristo', 'shhsdhs', '2004-11-27', 'guada', 'nose', 'tafirol', 'si'),
-(7, 'erika', 'lucero', 'Femenino', '315342', 'monte cristo', 'shhsdhs', '2004-11-27', 'guada', 'nose', 'tafirol', 'si'),
-(8, 'erika', 'lucero', 'Femenino', '315342', 'monte cristo', 'shhsdhs', '2004-11-27', 'guada', 'nose', 'tafirol', 'si'),
-(9, 'erika', 'lucero', 'Femenino', '315342', 'monte cristo', 'shhsdhs', '2004-11-27', 'guada', 'nose', 'tafirol', 'si'),
-(10, 'erika', 'lucero', 'Femenino', '315342', 'monte cristo', 'shhsdhs', '2004-11-27', 'guada', 'nose', 'tafirol', 'si');
+INSERT INTO `llamadas` (`id_llamada`, `fecha_respuesta`, `fecha_llegada`, `tiempo_espera`, `tipo_llamada`) VALUES
+(1, '2023-09-05 19:00:00.000000', '2023-09-05 18:00:00.000000', 0, ''),
+(2, '2023-09-10 18:15:00.000000', '2023-09-10 18:20:00.000000', 5, ''),
+(3, '2023-09-10 18:15:00.000000', '2023-09-10 18:20:00.000000', 5, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pacientes`
+--
+
+CREATE TABLE `pacientes` (
+  `id_paciente` int(11) NOT NULL,
+  `nombre` text NOT NULL,
+  `informacion_medica` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pacientes`
+--
+
+INSERT INTO `pacientes` (`id_paciente`, `nombre`, `informacion_medica`) VALUES
+(1, 'hola', 'rttghy');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `ficha_paciente`
+-- Indices de la tabla `llamadas`
 --
-ALTER TABLE `ficha_paciente`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `llamadas`
+  ADD PRIMARY KEY (`id_llamada`);
+
+--
+-- Indices de la tabla `pacientes`
+--
+ALTER TABLE `pacientes`
+  ADD PRIMARY KEY (`id_paciente`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `ficha_paciente`
+-- AUTO_INCREMENT de la tabla `llamadas`
 --
-ALTER TABLE `ficha_paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `llamadas`
+  MODIFY `id_llamada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `pacientes`
+--
+ALTER TABLE `pacientes`
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
