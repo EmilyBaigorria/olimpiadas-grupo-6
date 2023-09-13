@@ -16,16 +16,20 @@
             margin: 0;
         }
         .container {
-            max-width: 400px;
+            width: 400px; /* Ancho del recuadro */
             padding: 20px;
-            background-color: #fff;
+            border: 2px solid #555;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         h1 {
-            font-family: 'Open Sans', sans-serif; /* Fuente similar a la de 'Fecha de Respuesta' */
+            font-family: 'Open Sans', sans-serif;
             color: #333;
             margin-top: 0;
+            text-align: center;
+        }
+        .form-container {
+            text-align: center;
         }
         label {
             display: block;
@@ -60,16 +64,18 @@
 <body>
     <div class="container">
         <h1>Ingreso de Datos</h1>
-        <form action="procesar.php" method="post">
-            <label for="hora_llegada">Hora de Llegada:</label>
-            <input type="datetime-local" id="hora_llegada" name="hora_llegada" required>
-            <label for="fecha_respuesta">Fecha de Respuesta:</label>
-            <input type="datetime-local" id="fecha_respuesta" name="fecha_respuesta" required>
-            <p id="tiempo_espera">Tiempo de Espera:</p>
-            <input type="submit" value="Guardar">
-        </form>
+        <div class="form-container"> <!-- Contenedor del formulario -->
+            <form action="procesar.php" method="post">
+                <label for="hora_llegada">Hora de Llegada:</label>
+                <input type="datetime-local" id="hora_llegada" name="hora_llegada" required>
+                <label for="fecha_respuesta">Fecha de Respuesta:</label>
+                <input type="datetime-local" id="fecha_respuesta" name="fecha_respuesta" required>
+                <p id="tiempo_espera">Tiempo de Espera:</p>
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
     </div>
-
+    
     <script>
         function calcularTiempoEspera() {
             const fechaHoraLlegada = document.getElementById('hora_llegada').value;
