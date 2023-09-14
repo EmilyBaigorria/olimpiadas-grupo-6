@@ -1,9 +1,6 @@
 <?php
+include("conexion.php");
 
-$conexion = mysqli_connect("localhost", "root","","hospital_llamadas") or exit ("no se puede conectar");
-
-
-// Verificar la conexión
 if ($conexion->connect_error) {
     die("La conexión a la base de datos ha fallado: " . $conexion->connect_error);
 }
@@ -39,9 +36,12 @@ $result = $conexion->query($sql);
             echo "<td>" . $row['nombre_paciente'] . "</td>";
             echo "<td>" . $row['motivo'] . "</td>";
             echo "<td>" . $row['urgencia'] . "</td>";
+            echo "<td><a href='editar.php?id=" . $row['id'] . "'>Editar</a></td>"; // Agregar el enlace de editar
             echo "</tr>";
         }
+
         ?>
+        
     </table>
 </body>
 </html>

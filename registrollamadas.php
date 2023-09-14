@@ -22,18 +22,13 @@
             <option value="Emergencia">Emergencia</option>
         </select><br>
 
-        <label for="fecha_registro">Fecha Registro:</label>
-        <input type="date" id="fecha_registro" name="fecha_registro" required><br>
-
         <button type="submit">Registrar Llamada</button>
+        
     </form>
-
-   <script src="script.js"></script> 
 </body>
 </html>
 
 <?php
-
 $conexion = mysqli_connect("localhost", "root","","hospital_llamadas") or exit ("no se puede conectar");
 
 // Verificar la conexión
@@ -51,7 +46,7 @@ $sql = "INSERT INTO llamadass (nombre_paciente, motivo, urgencia) VALUES ('$nomb
 if ($conexion->query($sql) === TRUE) {
     echo "Llamada registrada con éxito.";
 } else {
-    echo "Error al registrar la llamada: " . $conexion->error;
+    echo "Error al registrar la llamada: " . $conexion->error();
 }
 
 // Cerrar la conexión
