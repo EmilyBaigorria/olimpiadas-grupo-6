@@ -37,9 +37,14 @@ $result = $conexion->query($sql);
             echo "<td>" . $row['motivo'] . "</td>";
             echo "<td>" . $row['urgencia'] . "</td>";
             echo "<td><a href='editar.php?id=" . $row['id'] . "'>Editar</a></td>"; // Agregar el enlace de editar
-            echo "</tr>";
-        }
-
+            echo '<td>';
+            echo '<form method="POST" action="eliminar.php">';
+            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+            echo '<button type="submit" class="button">Eliminar</button>';
+            echo '</form>';
+            echo '</td>';
+            echo '</tr>';
+    }
         ?>
         
     </table>
