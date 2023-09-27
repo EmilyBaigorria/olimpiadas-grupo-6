@@ -1,0 +1,60 @@
+body {
+    background-color: #c6f0ee;
+}
+
+.cabecera {
+    background-color: #c6f0ee;
+    padding: 20px;
+    text-align: center;
+}
+
+h1{
+    font-size: 40px;
+}
+
+form {
+    background-color: #c4fffc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+select {
+    margin-bottom: 20px; 
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="tel"],
+textarea,
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #00000075; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"],
+a.boton-secretaria {
+    background-color: #4e8cff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type="submit"]:hover,
+a.boton-secretaria:hover {
+    background-color: #367be3;
+}
+
